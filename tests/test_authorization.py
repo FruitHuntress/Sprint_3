@@ -14,7 +14,7 @@ class TestAuthorization:
         driver.find_element(By.XPATH, Locator.authorization_button).click()
         WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locator.constructor_title)))
 
-        title = driver.find_element(By.XPATH, '/html[1]/body[1]/div[1]/div[1]/main[1]/section[1]/h1[1]').text
+        title = driver.find_element(By.XPATH, Locator.constructor_title).text
         assert title == "Соберите бургер"
         #print(title)
 
@@ -46,7 +46,7 @@ class TestAuthorization:
 
         WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locator.constructor_title)))
 
-        title = driver.find_element(By.XPATH, '/html[1]/body[1]/div[1]/div[1]/main[1]/section[1]/h1[1]').text
+        title = driver.find_element(By.XPATH, Locator.constructor_title).text
         assert title == "Соберите бургер"
 
     def test_authorization_from_pass_restoration_form(self, driver):
