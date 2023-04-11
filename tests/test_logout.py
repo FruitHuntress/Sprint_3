@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
-class TestProfileOpen:
+class TestProfileLogout:
     def test_profile_logout(self, login):
         driver = login
         driver.find_element(By.XPATH, Locator.profile_button).click()
