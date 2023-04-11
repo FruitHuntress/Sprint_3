@@ -7,7 +7,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from locator import Locator
 
 main_url = 'https://stellarburgers.nomoreparties.site'
-#auth_url = 'https://stellarburgers.nomoreparties.site/login'
 
 @pytest.fixture(scope='function')
 def driver():
