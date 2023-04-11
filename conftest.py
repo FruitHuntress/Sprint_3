@@ -8,7 +8,7 @@ from locator import Locator
 
 main_url = 'https://stellarburgers.nomoreparties.site'
 
-@pytest.fixture(scope='function')
+@pytest.fixture()
 def driver():
     options = Options()
     options.add_argument('--window-size=1200,600')
@@ -19,7 +19,7 @@ def driver():
     yield browser
     browser.quit()
 
-@pytest.fixture(scope='function')
+@pytest.fixture()
 def login(driver):
     driver.find_element(By.XPATH, Locator.login_button).click()
     WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locator.authorization_email)))
