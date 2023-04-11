@@ -3,6 +3,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
+unclicked_sauces = 'tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect'
+unclicked_buns = 'tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect'
+unclicked_toppings = 'tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect'
+
 class TestProfileOpen:
     def test_profile_page_open(self, login):
         driver = login
@@ -34,7 +38,6 @@ class TestProfileOpen:
 
     def test_constructor_to_sauces_navigation(self, login):
         driver = login
-        unclicked_sauces = 'tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect'
 
         driver.find_element(By.XPATH, Locator.sauces).click()
         clicked_sauces = driver.find_element(By.XPATH, Locator.sauces).get_attribute('class')
@@ -42,7 +45,6 @@ class TestProfileOpen:
 
     def test_constructor_to_buns_navigation(self, login):
         driver = login
-        unclicked_buns = 'tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect'
 
         driver.find_element(By.XPATH, Locator.sauces).click()
         driver.find_element(By.XPATH, Locator.buns).click()
@@ -51,7 +53,6 @@ class TestProfileOpen:
 
     def test_constructor_to_toppings_navigation(self, login):
         driver = login
-        unclicked_toppings = 'tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect'
 
         driver.find_element(By.XPATH, Locator.toppings).click()
         clicked_toppings = driver.find_element(By.XPATH, Locator.toppings).get_attribute('class')
