@@ -16,7 +16,7 @@ class TestAuthorization:
 
         title = driver.find_element(By.XPATH, Locator.constructor_title).text
         assert title == "Соберите бургер"
-        #print(title)
+
 
     def test_authorization_from_profile_page(self, driver):
         driver.find_element(By.XPATH, Locator.profile_button).click()
@@ -35,9 +35,6 @@ class TestAuthorization:
         driver.find_element(By.XPATH, Locator.registration_link).click()
         driver.find_element(By.XPATH, Locator.login_link).click()
         WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locator.login_title)))
-
-        #text = driver.find_element(By.XPATH, Locator.login_title).text
-        #assert text == "Вход"
 
         driver.find_element(By.XPATH, Locator.authorization_email).send_keys('anna_krylova_8_123@yandex.ru')
         driver.find_element(By.XPATH, Locator.authorization_password).send_keys('randompass123')
