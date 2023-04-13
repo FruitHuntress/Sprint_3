@@ -27,6 +27,10 @@ class TestAuthorization:
         driver.find_element(By.XPATH, Locator.authorization_password).send_keys('randompass123')
         WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locator.authorization_button)))
         driver.find_element(By.XPATH, Locator.authorization_button).click()
+        WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locator.constructor_title)))
+
+        title = driver.find_element(By.XPATH, Locator.constructor_title).text
+        assert title == "Соберите бургер"
 
     def test_authorization_from_registration_form(self, driver):
         driver.find_element(By.XPATH, Locator.login_button).click()
