@@ -4,7 +4,7 @@ class Locator:
     profile_button = "//p[contains(text(),'Личный Кабинет')]"   #кнопка входа в Личный кабинет
     login_button = ".//button[contains(text(),'Войти в аккаунт')]"   #кнопка входа в аккаунт
     registration_link = ".//a[contains(text(), 'Зарегистрироваться')]"  #кнопка регистрации
-    registration_email = ".//fieldset[2]//input"  #поле ввода почты на форме регистрации
+    registration_email = "//label[contains(text(),'Email')]/following-sibling::input"  #поле ввода почты на форме регистрации
     registration_password = ".//input[@name='Пароль']"  # поле ввода пароля на форме регистрации
     registration_button = "//button[contains(text(),'Зарегистрироваться')]"  # кнопка регистрации на форме регистрации
     registration_title = "//h2[contains(text(),'Регистрация')]"  #заголовок формы регистрации
@@ -25,3 +25,4 @@ class Locator:
     toppings = ".//span[contains(text(),'Начинки')]"   # кнопка "Начинки"
     logout_button = "//button[contains(text(),'Выход')]"    # кнопка деавторизации
     incorrect_pass = "//p[contains(text(),'Некорректный пароль')]"    # сообщение о некорректном пароле
+    active_section = "//*[contains(@class, 'tab_tab_type_current')]"

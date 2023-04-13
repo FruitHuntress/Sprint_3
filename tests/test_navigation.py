@@ -3,9 +3,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
-unclicked_sauces = 'tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect'
-unclicked_buns = 'tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect'
-unclicked_toppings = 'tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect'
 
 class TestProfileOpen:
     def test_profile_page_open(self, login):
@@ -35,19 +32,19 @@ class TestProfileOpen:
 
     def test_constructor_to_sauces_navigation(self, login):
         login.find_element(By.XPATH, Locator.sauces).click()
-        clicked_sauces = login.find_element(By.XPATH, Locator.sauces).get_attribute('class')
-        assert clicked_sauces != unclicked_sauces
+        clicked_sauces = login.find_element(By.XPATH, Locator.active_section).text
+        assert clicked_sauces == "Соусы"
 
     def test_constructor_to_buns_navigation(self, login):
         login.find_element(By.XPATH, Locator.sauces).click()
         login.find_element(By.XPATH, Locator.buns).click()
-        clicked_buns = login.find_element(By.XPATH, Locator.buns).get_attribute('class')
-        assert clicked_buns != unclicked_buns
+        clicked_buns = login.find_element(By.XPATH, Locator.buns).text
+        assert clicked_buns == "Булки"
 
     def test_constructor_to_toppings_navigation(self, login):
         login.find_element(By.XPATH, Locator.toppings).click()
-        clicked_toppings = login.find_element(By.XPATH, Locator.toppings).get_attribute('class')
-        assert clicked_toppings != unclicked_toppings
+        clicked_toppings = login.find_element(By.XPATH, Locator.toppings).text
+        assert clicked_toppings == "Начинки"
 
 
 
