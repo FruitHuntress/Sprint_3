@@ -1,5 +1,3 @@
-import time
-
 from faker import Faker
 from locator import Locator
 from selenium.webdriver.common.by import By
