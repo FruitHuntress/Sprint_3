@@ -13,7 +13,7 @@ class TestRegistration:
         driver.find_element(By.XPATH, Locator.login_button).click()
         driver.find_element(By.XPATH, Locator.registration_link).click()
 
-        driver.find_element(By.XPATH, Locator.name).send_keys("Ann")
+        driver.find_element(By.NAME, Locator.name).send_keys("Ann")
         driver.find_element(By.XPATH, Locator.registration_email).send_keys(email)
         driver.find_element(By.XPATH, Locator.registration_password).send_keys("randompass123")
 

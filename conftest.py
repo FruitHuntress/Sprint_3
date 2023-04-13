@@ -22,8 +22,8 @@ def driver():
 @pytest.fixture()
 def login(driver):
     driver.find_element(By.XPATH, Locator.login_button).click()
-    WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locator.authorization_email)))
-    driver.find_element(By.XPATH, Locator.authorization_email).send_keys('anna_krylova_8_123@yandex.ru')
+    WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.NAME, Locator.authorization_email)))
+    driver.find_element(By.NAME, Locator.authorization_email).send_keys('anna_krylova_8_123@yandex.ru')
     driver.find_element(By.XPATH, Locator.authorization_password).send_keys('randompass123')
     WebDriverWait(driver, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locator.authorization_button)))
     driver.find_element(By.XPATH, Locator.authorization_button).click()
