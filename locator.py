@@ -25,4 +25,4 @@ class Locator:
     toppings = ".//span[contains(text(),'Начинки')]"   # кнопка "Начинки"
     logout_button = "//button[contains(text(),'Выход')]"    # кнопка деавторизации
     incorrect_pass = "//p[contains(text(),'Некорректный пароль')]"    # сообщение о некорректном пароле
-    active_section = "//*[contains(@class, 'tab_tab_type_current')]"
+    active_section = "//*[contains(@class, 'tab_tab_type_current')]" # выбранный раздел конструктора

@@ -22,8 +22,6 @@ class TestRegistration:
         title = driver.find_element(By.XPATH, Locator.login_title).text
         assert title == "Вход"
 
-
-
     def test_registration_with_empty_name(self, driver):
         email = faker.email()
 

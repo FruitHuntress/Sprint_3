@@ -11,7 +11,6 @@ class TestProfileOpen:
         title = login.find_element(By.XPATH, Locator.profile_link).text
         assert title == "Профиль"
 
-
     def test_from_profile_to_constructor_by_button(self, login):
         login.find_element(By.XPATH, Locator.profile_button).click()
         WebDriverWait(login, 3).until(expected_conditions.visibility_of_element_located((By.XPATH, Locator.profile_link)))
@@ -45,6 +44,7 @@ class TestProfileOpen:
         login.find_element(By.XPATH, Locator.toppings).click()
         clicked_toppings = login.find_element(By.XPATH, Locator.toppings).text
         assert clicked_toppings == "Начинки"
+
 
 
 

@@ -17,7 +17,6 @@ class TestAuthorization:
         title = driver.find_element(By.XPATH, Locator.constructor_title).text
         assert title == "Соберите бургер"
 
-
     def test_authorization_from_profile_page(self, driver):
         driver.find_element(By.XPATH, Locator.profile_button).click()
 
